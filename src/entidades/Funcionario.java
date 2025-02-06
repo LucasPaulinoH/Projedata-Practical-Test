@@ -3,12 +3,16 @@ package entidades;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+import tipos.Funcao;
+
 public class Funcionario extends Pessoa {
     private BigDecimal salario;
     private String funcao;
 
-    public Funcionario(String nome, LocalDate dataNascimento) {
+    public Funcionario(String nome, LocalDate dataNascimento, double salario, Funcao funcao) {
         super(nome, dataNascimento);
+        this.salario = new BigDecimal(salario);
+        this.funcao = funcao.getFuncao();
     }
 
     public BigDecimal getSalario() {
